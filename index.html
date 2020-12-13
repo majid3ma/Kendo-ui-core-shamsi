@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2020.1.406/styles/kendo.common.min.css" />
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2020.1.406/styles/kendo.default.min.css" />
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2020.1.406/styles/kendo.rtl.min.css"/>
+
+    <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>    
+    <script src="http://kendo.cdn.telerik.com/2020.1.406/js/cultures/kendo.culture.fa-IR.min.js"></script>
+    <script src="kendo.core.js"></script>
+    <script src="kendo.calendar.js"></script>
+    <script src="http://kendo.cdn.telerik.com/2020.1.406/js/kendo.popup.min.js"></script>
+    <script src="kendo.datepicker.js"></script>
+    
+    
+</head>
+<body>
+    
+        <div id="example" class="k-rtl">
+            <div id="calendar" ></div>
+            <input id="datepicker" value="1399/09/23" /><br/><br/>
+
+        <script>
+            $(document).ready(function() {
+                
+                $("#calendar").kendoCalendar();
+                $("#datepicker").kendoDatePicker();
+            });
+        </script>
+        </div>
+
+
+    
+
+</body>
+</html>   
