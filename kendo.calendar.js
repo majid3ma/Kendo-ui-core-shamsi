@@ -70,7 +70,7 @@ var __meta__ = { // jshint ignore:line
         ARIA_LABEL = "aria-label",
         proxy = $.proxy,
         extend = $.extend,
-        DATE = Date,
+            DATE = JalaliDate,
         views = {
             month: 0,
             year: 1,
@@ -174,8 +174,8 @@ var __meta__ = { // jshint ignore:line
         options: {
             name: "Calendar",
             value: null,
-            min: new DATE(1900, 0, 1),
-            max: new DATE(2099, 11, 31),
+                min: new DATE(1278, 11, 1),
+                max: new DATE(1478, 11, 1),
             dates: [],
             disableDates: null,
             url: "",
@@ -475,7 +475,6 @@ var __meta__ = { // jshint ignore:line
                 options = that.options,
                 min = options.min,
                 max = options.max;
-
             if (value === null) {
                 that._current = createDate(that._current.getFullYear(), that._current.getMonth(), that._current.getDate());
             }
@@ -874,8 +873,7 @@ var __meta__ = { // jshint ignore:line
             min = that.options.min,
             max = that.options.max,
             isDisabled = that.options.disableDates,
-            navigatableDate = new Date(currentValue.getTime());
-
+                    navigatableDate = new JalaliDate(currentValue.getTime());
             view.setDate(navigatableDate, -value);
 
             while (disabled) {
@@ -1049,7 +1047,7 @@ var __meta__ = { // jshint ignore:line
         _click: function(link) {
             var that = this,
             options = that.options,
-            currentValue = new Date(+that._current),
+            currentValue = new JalaliDate(+that._current),
             value = toDateObject(link);
 
             adjustDST(value, 0);
@@ -1293,8 +1291,7 @@ var __meta__ = { // jshint ignore:line
 
             var firstDay = calendarInfo.firstDay,
             firstVisibleDay = new DATE(date.getFullYear(), date.getMonth(), 1, date.getHours(), date.getMinutes(), date.getSeconds(), date.getMilliseconds());
-            firstVisibleDay.setFullYear(date.getFullYear());
-
+                //firstVisibleDay.setFullYear(date.getFullYear());
             while (firstVisibleDay.getDay() != firstDay) {
                 calendar.setTime(firstVisibleDay, -1 * MS_PER_DAY);
             }
@@ -1817,7 +1814,7 @@ var __meta__ = { // jshint ignore:line
     // creates date with full year
     function createDate(year, month, date) {
         var dateObject = new DATE(year, month, date);
-        dateObject.setFullYear(year, month, date);
+        //dateObject.setFullYear(year);
         return dateObject;
     }
 

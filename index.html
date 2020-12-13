@@ -6,13 +6,13 @@
     <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2020.1.406/styles/kendo.common.min.css" />
     <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2020.1.406/styles/kendo.default.min.css" />
     <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2020.1.406/styles/kendo.rtl.min.css"/>
-
+    <script src="JalaliDate.js"></script>
     <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>    
-    <script src="http://kendo.cdn.telerik.com/2020.1.406/js/cultures/kendo.culture.fa-IR.min.js"></script>
     <script src="kendo.core.js"></script>
     <script src="kendo.calendar.js"></script>
     <script src="http://kendo.cdn.telerik.com/2020.1.406/js/kendo.popup.min.js"></script>
     <script src="kendo.datepicker.js"></script>
+    <script src="http://kendo.cdn.telerik.com/2020.1.406/js/cultures/kendo.culture.fa-IR.min.js"></script>
     
     
 </head>
@@ -24,7 +24,7 @@
 
         <script>
             $(document).ready(function() {
-                
+                kendo.culture('fa-IR');
                 $("#calendar").kendoCalendar();
                 $("#datepicker").kendoDatePicker();
             });

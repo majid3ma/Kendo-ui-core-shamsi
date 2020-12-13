@@ -1128,7 +1128,7 @@ function pad(number, digits, end) {
 
     var toString = function(value, fmt, culture) {
         if (fmt) {
-            if (objectToString.call(value) === "[object Date]") {
+            if (objectToString.call(value) === "[object Date]" || value instanceof JalaliDate) {
                 return formatDate(value, fmt, culture);
             } else if (typeof value === NUMBER) {
                 return formatNumber(value, fmt, culture);
@@ -1589,10 +1589,20 @@ function pad(number, digits, end) {
     }
 
     function internalParseDate(value, formats, culture, strict) {
-        if (objectToString.call(value) === "[object Date]") {
-            return value;
-        }
-
+        if (culture = "fa-IR") {
+            if (objectToString.call(value) === '[object Date]' || value instanceof JalaliDate){
+                 return value;
+	        }
+                    if (formats != undefined) {
+                        if (value !== null && value !== "" && value != undefined && (formats == "yyyy/MM/dd" || formats[0] == "yyyy/MM/dd")) 
+                            return JalaliDate.parse(value);
+                    }
+       }
+       else {
+        if(objectToString.call(value) === '[object Date]') {
+          return value;
+       	}
+       }
         var idx = 0;
         var date = null;
         var length;

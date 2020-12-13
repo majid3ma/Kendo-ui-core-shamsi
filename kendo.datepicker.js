@@ -49,7 +49,7 @@ var __meta__ = { // jshint ignore:line
     isEqualDatePart = calendar.isEqualDatePart,
     extend = $.extend,
     proxy = $.proxy,
-    DATE = Date;
+    DATE = JalaliDate;
 
     function normalize(options) {
         var parseFormats = options.parseFormats,
@@ -297,8 +297,8 @@ var __meta__ = { // jshint ignore:line
 
             options.disableDates = kendo.calendar.disabled(options.disableDates);
 
-            options.min = parse(element.attr("min")) || parse(options.min);
-            options.max = parse(element.attr("max")) || parse(options.max);
+            options.min = parse(element.attr("min")) || parse('1278/11/01', 'yyyy/MM/dd');
+            options.max = parse(element.attr("max")) || parse('1478/11/01', 'yyyy/MM/dd');
 
             normalize(options);
 
