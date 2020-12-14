@@ -46,7 +46,7 @@ var __meta__ = { // jshint ignore:line
         ARIA_HIDDEN = "aria-hidden",
         ARIA_OWNS = "aria-owns",
         ARIA_DISABLED = "aria-disabled",
-        DATE = Date,
+        DATE = JalaliDate,
         MIN = new DATE(1800, 0, 1),
         MAX = new DATE(2099, 11, 31),
         dateViewParams = { view: "date" },
@@ -63,8 +63,8 @@ var __meta__ = { // jshint ignore:line
             options = that.options;
 
             options.disableDates = kendo.calendar.disabled(options.disableDates);
-            options.min = parse(element.attr("min")) || parse(options.min);
-            options.max = parse(element.attr("max")) || parse(options.max);
+            options.min = parse(element.attr("min")) || parse('1278/11/01', 'yyyy/MM/dd');
+            options.max = parse(element.attr("max")) || parse('1478/11/01', 'yyyy/MM/dd');
 
             normalize(options);
 

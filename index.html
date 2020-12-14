@@ -12,6 +12,8 @@
     <script src="kendo.calendar.js"></script>
     <script src="http://kendo.cdn.telerik.com/2020.1.406/js/kendo.popup.min.js"></script>
     <script src="kendo.datepicker.js"></script>
+    <script src="http://kendo.cdn.telerik.com/2020.1.406/js/kendo.timepicker.min.js"></script>
+    <script src="kendo.datetimepicker.js"></script>
     <script src="http://kendo.cdn.telerik.com/2020.1.406/js/cultures/kendo.culture.fa-IR.min.js"></script>
     
     
@@ -21,12 +23,15 @@
         <div id="example" class="k-rtl">
             <div id="calendar" ></div>
             <input id="datepicker" value="1399/09/23" /><br/><br/>
+            <input id="datetimepicker" value="1399/09/23" /><br/><br/>
 
         <script>
             $(document).ready(function() {
                 kendo.culture('fa-IR');
                 $("#calendar").kendoCalendar();
                 $("#datepicker").kendoDatePicker();
+                $("#datetimepicker").kendoDateTimePicker();
+                
             });
         </script>
         </div>
